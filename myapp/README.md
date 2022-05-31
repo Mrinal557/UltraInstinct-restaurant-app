@@ -32,3 +32,19 @@ You can check out [the Next.js GitHub repository](https://github.com/vercel/next
 The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
 
 Check out our [Next.js deployment documentation](https://nextjs.org/docs/deployment) for more details.
+
+adding .babelrc file to the folder structure
+previously it was only :- 
+{
+"preset":["next/babel"]
+}
+therfore it was throwing error :-
+Add @babel/preset-react to the 'presets' section of your Babel config to enable transformation.
+
+I added the suggestion along with {"runtime":"automatic"} and then it worked fine thereafter.
+{
+"preset":["next/babel"],
+"presets":["@babel/preset-env",["@babel/preset-react",{"runtime":"automatic"}]
+]
+}
+}
